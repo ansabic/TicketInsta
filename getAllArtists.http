@@ -1,0 +1,2 @@
+GET https://api.deezer.com/genre/0/artists
+Accept: application/json
