@@ -7,14 +7,14 @@ document.querySelector("#search").addEventListener("click", () => {
     apiRequest();
 });
 
-apiRequest = () => {
+/*apiRequest = () => {
 
     document.querySelector("#grid").textContent = "";
 
-    const url = 'https://api.deezer.com/genre/0/artists';
+    const url = 'https://pokeapi.co/api/v2/pokemon-color/yellow/';
 
     fetch(url ,{
-        mode: 'no-cors',
+        //mode: 'no-cors',
         method: 'GET'
     })
 
@@ -34,11 +34,25 @@ loadImages = (data) => {
     for (let i = 0; i < data.data.length; i++) {
         let image = document.createElement("div");
         image.className = "img";
-        let string = data.data[i].picture_big;
-        image.style.backgroundImage = string.replace('\\',"");
+        //let string = data.data[i].picture_big;
+        //let properImage = string.replace('\\',"");
+        image.style.backgroundImage = "url("+data.data[i].urls.raw + "&w=1366&h=768" +")";
         image.addEventListener("dblclick", function () {
             window.open(image.style.backgroundImage, '_blank');
         })
         document.querySelector("#grid").appendChild(image);
     }
-}
+}*/
+
+apiRequest = () => {
+    for(let i = 0;i < data.length;i++){
+
+      let image = document.createElement("div");
+      image.className = "img";
+      image.style.backgroundImage = data.picture_medium;
+      /*image.addEventListener("dblclick", function(){
+        window.open(element.data[i].links.download, '_blank');
+      })*/
+      document.querySelector("#grid").appendChild(image);
+    }
+  }
