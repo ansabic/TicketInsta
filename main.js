@@ -68,7 +68,7 @@ function createImageByDataElement(i) {
 
     let price = document.createElement("div");
     price.className = "price";
-    price.textContent = Math.floor(data[i]["price"] * Math.random() + 250).toString() + " KN";
+    price.textContent = Math.floor(350 * Math.random() + 250).toString() + " KN";
 
     imageContainer.appendChild(image);
     imageContainer.appendChild(nameText);
