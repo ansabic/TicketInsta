@@ -1,58 +1,39 @@
-document.querySelector("#input").addEventListener("keydown", (event) => {
-    if (event.key === "Enter")
-        apiRequest();
+let item = data;
+let artistNames = [];
+artistNames = data.map(item => item["name"]);
+
+//load images upon start up
+window.addEventListener('load', () => {
+    getImagesFromJSFile();
 });
 
-document.querySelector("#search").addEventListener("click", () => {
-    apiRequest();
-});
-
-/*apiRequest = () => {
-
-    document.querySelector("#grid").textContent = "";
-
-    const url = 'https://pokeapi.co/api/v2/pokemon-color/yellow/';
-
-    fetch(url ,{
-        //mode: 'no-cors',
-        method: 'GET'
+//search button
+document.querySelector("[data-search]").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    artistNames.forEach(data => {
+      const isVisible = data.toLowerCase().includes(value);
+        let element = document.getElementById(artistNames.indexOf(data));
+        if(!isVisible)
+        {
+            element.style.display = "none";
+        }
+        else
+        element.style.display = "block";
     })
+})
 
-        .then(response => {
-            if (!response.ok) throw Error(response.statusText);
-            return response.json();
-        })
+getImagesFromJSFile = () => {
 
-        .then(data => {
-            loadImages(data);
-        }).catch(error => console.log(error))
-
-
-}
-
-loadImages = (data) => {
-    for (let i = 0; i < data.data.length; i++) {
+    for (let i = 0; i < item.length - 1; i++) 
+    {
         let image = document.createElement("div");
         image.className = "img";
-        //let string = data.data[i].picture_big;
-        //let properImage = string.replace('\\',"");
-        image.style.backgroundImage = "url("+data.data[i].urls.raw + "&w=1366&h=768" +")";
-        image.addEventListener("dblclick", function () {
-            window.open(image.style.backgroundImage, '_blank');
-        })
+        image.id = i;
+        image.style.display = "block";
+        image.style.backgroundImage = "url(" + item[i].picture_medium + ")";
+        /*image.addEventListener("dblclick", function(){
+          window.open(data.results[i].links.download, '_blank');
+        })*/
         document.querySelector("#grid").appendChild(image);
     }
-}*/
-
-apiRequest = () => {
-    for(let i = 0;i < data.length;i++){
-
-      let image = document.createElement("div");
-      image.className = "img";
-      image.style.backgroundImage = data.picture_medium;
-      /*image.addEventListener("dblclick", function(){
-        window.open(element.data[i].links.download, '_blank');
-      })*/
-      document.querySelector("#grid").appendChild(image);
-    }
-  }
+}
