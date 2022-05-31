@@ -73,6 +73,7 @@ input:focus{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+    padding-bottom: 45px;
 }
 
 .img{
@@ -117,7 +118,43 @@ input:focus{
 
     #search_box input{font-size: .7rem;}
 }
+.centerText {
+    text-align: center;
+    color: bisque;
+}
 
-.hide {
-    display: none;
-  }
+.title {
+    width: 380px;
+    position: absolute;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.location {
+    width: 380px;
+    position: absolute;
+    text-align: left;
+    padding-top: 35px;
+}
+
+.date {
+    width: 380px;
+    position: absolute;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.price {
+    width: 380px;
+    position: absolute;
+    text-align: right;
+    padding-top: 35px;
+}
+
+.imageContainer {
+    width: 380px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
