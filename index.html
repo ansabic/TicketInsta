@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<main>
+    <main>
 
-    <header>
-        <div class="container">
-            <div id="header">
-                <h2><i class="fas fa-camera"></i>TicketInsta</h2>
-                <div id="search_box">
-                    <label for="search"></label><input id="search" placeholder="Search..." data-search><i
-                        class="fas fa-search"></i>
+        <header>
+            <div class="container">
+                <div id="header">
+                    <h2><i class="fas fa-camera"></i>TicketInsta</h2>
+                    <div id="search_box">
+                        <label for="search"></label><input id="search" placeholder="Search..." data-search><i
+                            class="fas fa-search"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section>
-        <div class="container">
-            <div id="grid"></div>
-            <div class="popup" id="popup">
-                <div class="overlay">
-                    <div class="content">Test</div>
+        <section>
+            <div class="container" id="container" onclick="event.stopPropagation()">
+                <div id="gridWrapper" onclick="event.stopPropagation()">
+                    <div id="grid" onclick="event.stopPropagation()"></div>
                 </div>
+                <div class="popup" id="popup">
+                    <div class="overlay">
+                        <div class="content">Test</div>
+                    </div>
+                </div>
+                <div id="centerText"></div>
             </div>
-            <div id="centerText"></div>
-        </div>
-    </section>
+        </section>
 
-</main>
-<script type="text/javascript" src="artists.js"></script>
-<script type="text/javascript" src="cities.js"></script>
-<script src="main.js"></script>
+    </main>
+    <script type="text/javascript" src="artists.js"></script>
+    <script type="text/javascript" src="cities.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

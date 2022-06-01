@@ -98,9 +98,9 @@ function createImageByDataElement(i) {
     imageContainer.appendChild(dateDesc);
     imageContainer.appendChild(priceDesc);
 
-    button.addEventListener("click",(event) => {
+    imageContainer.addEventListener("click",(event) => {
         document.getElementById("popup").style.display = "block";
-        document.getElementById(event.currentTarget.id).style.display = "none";
+        document.getElementById("grid").style.display = "none";
     });
 
     return imageContainer;
