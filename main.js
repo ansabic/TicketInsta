@@ -4,6 +4,8 @@ const error_message = "Nema pronađenih rezultata!";
 let artistNames = [];
 artistNames = data.map(item => item["name"]);
 
+let resultDict = {};
+
 Date.prototype.addDays = function (days) {
     let date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);
@@ -87,6 +89,14 @@ function createImageByDataElement(i) {
     priceDesc.className = "descriptionPrice";
     priceDesc.textContent = "Cijena:";
 
+    resultDict[i] = {
+        "name": nameText.textContent,
+        "location": locationName.textContent,
+        "date": date.textContent,
+        "price": price.textContent,
+        "picture": data[i].picture_xl
+    };
+
     imageContainer.appendChild(image);
     imageContainer.appendChild(button);
     imageContainer.appendChild(nameText);
@@ -97,13 +107,59 @@ function createImageByDataElement(i) {
     imageContainer.appendChild(dateDesc);
     imageContainer.appendChild(priceDesc);
 
-    imageContainer.addEventListener("click", (event) => {
+    imageContainer.addEventListener("click", (ev) => {
         document.getElementById("grid").style.opacity = "0.3";
+        document.getElementById("container").style.pointerEvents = "none";
+        addDataToPopup(ev.currentTarget.id);
         document.getElementById("popup").classList.add("show");
-
     });
 
     return imageContainer;
+}
+
+function addDataToPopup(id) {
+    let columnGroup = document.createElement("div");
+    columnGroup.id = "group";
+    columnGroup.className = "column";
+
+    let name = document.createElement("div");
+    name.textContent = resultDict[id]["name"];
+    name.className = "result";
+
+    let location = document.createElement("div");
+    location.textContent = resultDict[id]["location"];
+    location.className = "result";
+
+    let date = document.createElement("div");
+    date.textContent = resultDict[id]["date"];
+    date.className = "result";
+
+    let price = document.createElement("div");
+    price.textContent = resultDict[id]["price"];
+    price.className = "result";
+
+    let rowGroup1 = document.createElement("div");
+    rowGroup1.id = "rowGroup1";
+    rowGroup1.className = "rowGroup";
+
+    let rowGroup2 = document.createElement("div");
+    rowGroup2.id = "rowGroup2";
+    rowGroup2.className = "rowGroup";
+
+    let image = document.createElement("div");
+    image.style.backgroundImage = "url(" + data[id]["picture"] + ")";
+    image.className = "resultImg";
+
+    rowGroup1.appendChild(name);
+    rowGroup1.appendChild(date);
+    rowGroup2.appendChild(location);
+    rowGroup2.appendChild(price);
+
+    columnGroup.appendChild(image);
+    columnGroup.appendChild(rowGroup1);
+    columnGroup.appendChild(rowGroup2);
+
+    document.getElementById("column").appendChild(columnGroup);
 }
 
 function createEmptyElement() {
@@ -119,7 +175,7 @@ function addListeners() {
     document.getElementById("cancelButton").addEventListener("click", () => {
         document.getElementById("grid").style.opacity = "1";
         document.getElementById("popup").classList.remove("show");
-        emptyFields();
+        emptyFieldsAndClear();
     });
     document.getElementById("acceptButton").addEventListener("click", () => {
         confirmation();
@@ -147,18 +203,20 @@ function confirmation() {
 
     if (nameValid && surnameValid && emailValid && cardNumberValid) {
         showSuccess();
-        emptyFields();
+        emptyFieldsAndClear();
     } else {
         showError();
     }
 }
 
-function emptyFields() {
+function emptyFieldsAndClear() {
     document.getElementById("name").value = "";
     document.getElementById("surname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("cardNumber").value = "";
     document.getElementById("popupError").classList.remove("show");
+    document.getElementById("container").style.pointerEvents = "auto";
+    document.getElementById("group").remove();
 }
 
 function getImagesFromJSFile() {

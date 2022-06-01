@@ -90,8 +90,7 @@ input:focus {
     height: 214px;
     margin-top: 15px;
     background-position: center;
-    background-size: cover;
-    border-radius: 5px;
++ border-radius: 5 px;
     background-size: contain;
     background-repeat: no-repeat;
     transition: .5s ease;
@@ -104,6 +103,10 @@ input:focus {
 @media (max-width: 1280px) {
     .container {
         width: 100%;
+    }
+
+    #column {
+        display: block;
     }
 }
 
@@ -126,6 +129,16 @@ input:focus {
     #header h2 {
         padding: 5px 0;
     }
+
+    #popup {
+        width: 75%;
+    }
+
+    #column {
+        display: none;
+    }
+
+
 }
 
 @media (max-width: 480px) {
@@ -141,6 +154,26 @@ input:focus {
 
     #search_box input {
         font-size: .7rem;
+    }
+
+    #name {
+        width: 40%;
+    }
+
+    #surname {
+        width: 80%;
+    }
+
+    #email {
+        width: 80%;
+    }
+
+    #cardNumber {
+        width: 80%;
+    }
+
+    #popup {
+        width: 90%;
     }
 }
 
@@ -189,17 +222,17 @@ input:focus {
 }
 
 .inputText {
-    width: 400px;
+    width: 300px;
     height: 30px;
     padding-left: 5px;
+    align-self: center;
 }
 
 .inputNumber {
     padding-left: 5px;
-    width: 400px;
+    width: 300px;
     height: 30px;
-
-
+    align-self: center;
 }
 
 .descriptionDate {
@@ -253,6 +286,40 @@ input:focus {
     opacity: 1;
 }
 
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+    width: 350px;
+    height: 100%;
+}
+
+.rowGroup {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    font-size: 24px;
+    width: 350px;
+}
+
+.resultImg {
+    width: 180px;
+    height: 180px;
+    margin-top: 15px;
+    background-position: center;
+    border-radius: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
 .popup {
     background-color: #090f13;
     padding: 25px;
@@ -264,16 +331,14 @@ input:focus {
     text-align: center;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     font-size: 40px;
     top: 50%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 1000px;
-    height: 450px;
+    width: 768px;
+    height: 600px;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
@@ -289,7 +354,7 @@ input:focus {
 }
 
 .popupError {
-    font-size: 10px;
+    font-size: 12px;
     color: red;
     opacity: 0;
 }
@@ -359,4 +424,12 @@ input:focus {
 
 .successPopup.show {
     opacity: 1;
+}
+
+.group {
+
+}
+
+.result {
+
 }

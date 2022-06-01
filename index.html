@@ -28,17 +28,23 @@
                 <div id="grid"></div>
             </div>
             <div class="popup" id="popup">
-                <label for="popup">Unesite svoje podatke za kupovinu</label>
-                <input class="inputText" id="name" placeholder="Ime" type="text">
-                <input class="inputText" id="surname" placeholder="Prezime" type="text">
-                <input class="inputText" id="email" placeholder="Email" type="text">
-                <input class="inputNumber" id="cardNumber" inputmode="numeric" placeholder="Broj kartice" type="number">
-                <div class="buttons">
-                    <button class="cancelButton" id="cancelButton">OTKAŽI</button>
-                    <button class="acceptButton" id="acceptButton">PRIHVATI</button>
+                <div class="column" id="column">
                 </div>
-                <div class="popupError" id="popupError">
-                    Krivi unos, sva polja trebaju biti pravilno popunjena(broj kartice treba sadržavati 16 znamenki).
+                <div class="column" id="columnRight">
+                    <label for="column">Unesite svoje podatke za kupovinu</label>
+                    <input class="inputText" id="name" placeholder="Ime" type="text">
+                    <input class="inputText" id="surname" placeholder="Prezime" type="text">
+                    <input class="inputText" id="email" placeholder="Email" type="text">
+                    <input class="inputNumber" id="cardNumber" inputmode="numeric" placeholder="Broj kartice"
+                           type="number">
+                    <div class="buttons">
+                        <button class="cancelButton" id="cancelButton">OTKAŽI</button>
+                        <button class="acceptButton" id="acceptButton">PRIHVATI</button>
+                    </div>
+                    <div class="popupError" id="popupError">
+                        Krivi unos, sva polja trebaju biti pravilno popunjena(broj kartice treba sadržavati 16
+                        znamenki).
+                    </div>
                 </div>
 
             </div>
