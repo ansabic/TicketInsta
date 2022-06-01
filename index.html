@@ -8,38 +8,42 @@
 </head>
 
 <body>
-    <main>
+<main>
 
-        <header>
-            <div class="container">
-                <div id="header">
-                    <h2><i class="fas fa-camera"></i>TicketInsta</h2>
-                    <div id="search_box">
-                        <label for="search"></label><input id="search" placeholder="Search..." data-search><i
-                            class="fas fa-search"></i>
-                    </div>
+    <header>
+        <div class="container">
+            <div id="header">
+                <h2><i class="fas fa-camera"></i>TicketInsta</h2>
+                <div id="search_box">
+                    <label for="search"></label><input id="search" placeholder="Search..." data-search><i
+                        class="fas fa-search"></i>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section>
-            <div class="container" id="container" onclick="event.stopPropagation()">
-                <div id="gridWrapper" onclick="event.stopPropagation()">
-                    <div id="grid" onclick="event.stopPropagation()"></div>
-                </div>
-                <div class="popup" id="popup">
-                    <div class="overlay">
-                        <div class="content">Test</div>
-                    </div>
-                </div>
-                <div id="centerText"></div>
+    <section>
+        <div class="container" id="container" onclick="event.stopPropagation()">
+            <div id="gridWrapper">
+                <div id="grid"></div>
             </div>
-        </section>
+            <div class="popup" id="popup">
+                <label for="popup">Unesite svoje podatke za kupovinu</label>
+                <input type="text" id="name" placeholder="Ime" class="inputText">
+                <input type="text" id="surname" placeholder="Prezime" class="inputText">
+                <input type="text" id="email" placeholder="Email" class="inputText">
+                <input type="number" id="cardNumber" placeholder="Broj kartice" class="inputNumber">
+                <button id="cancelButton" class="cancelButton">OTKAŽI</button>
+                <button id="acceptButton" class="acceptButton">PRIHVATI</button>
+            </div>
+            <div id="centerText"></div>
+        </div>
+    </section>
 
-    </main>
-    <script type="text/javascript" src="artists.js"></script>
-    <script type="text/javascript" src="cities.js"></script>
-    <script src="main.js"></script>
+</main>
+<script type="text/javascript" src="artists.js"></script>
+<script type="text/javascript" src="cities.js"></script>
+<script src="main.js"></script>
 </body>
 
 </html>

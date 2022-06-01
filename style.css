@@ -74,7 +74,7 @@ input:focus {
     padding-bottom: 45px;
 }
 
-.gridWrapper{
+.gridWrapper {
     position: relative;
 }
 
@@ -94,13 +94,13 @@ input:focus {
     cursor: pointer;
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .container {
         width: 100%;
     }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     #main {
         width: 95%;
     }
@@ -121,7 +121,7 @@ input:focus {
     }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
     #header h2 {
         text-align: center;
         font-size: 1.5rem;
@@ -181,6 +181,18 @@ input:focus {
     font-size: 12px;
 }
 
+.inputText {
+    width: 400px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.inputNumber {
+    padding-left: 5px;
+    width: 400px;
+    height: 30px;
+}
+
 .descriptionDate {
     width: 214px;
     position: absolute;
@@ -232,12 +244,65 @@ input:focus {
     opacity: 1;
 }
 
-.popup{
+.popup {
+    background-color: #090f13;
+    padding: 25px;
+    border-radius: 15px;
     transition: .5s ease;
-    opacity: 1;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
     position: absolute;
+    font-size: 40px;
     top: 50%;
     left: 50%;
+    width: 1000px;
+    height: 450px;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+
+.popup.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.popupTitle {
+    opacity: 1;
+    position: center;
+    font-size: 40px;
+}
+
+.cancelButton {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    top: 50%;
+    left: 50%;
+}
+
+.acceptButton {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    top: 50%;
+    left: 50%;
 }
