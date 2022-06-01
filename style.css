@@ -1,41 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Comfortaa', cursive;
     background-color: black;
     color: white;
     overflow-x: hidden;
 }
 
-.container{
-    width: 1280px;
+.container {
+    width: 1600px;
     margin: auto;
 }
 
-header{border-bottom: 5px solid orange;}
+header {
+    border-bottom: 5px solid orange;
+}
 
-#header{
+#header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     min-height: 70px;
     padding: 0 20px;
+
 }
 
-#header h2{font-size: 2rem;}
+#header h2 {
+    font-size: 2rem;
+}
 
-#search_box{
+#search_box {
     position: relative;
     width: 350px;
 }
 
-#search_box input{
+#search_box input {
     box-sizing: border-box;
     width: 100%;
     font-size: 1rem;
@@ -51,110 +56,188 @@ header{border-bottom: 5px solid orange;}
     border: 1px solid #DDDDDD;
 }
 
-input:focus{
+input:focus {
     box-shadow: 0 0 5px orange;
     border: 1px solid orange;
 }
 
-#search_box i{
-    color: black;
-    position: absolute;
-    cursor: pointer;
-    top: 25%;
-    right: 4%;
-    transition: 1s;
+#search_box i:hover {
+    color: orange;
 }
 
-#search_box i:hover{color: orange;}
-
-#grid{
+#grid {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
     padding-bottom: 45px;
+    position: absolute;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
 }
 
-.img{
-    width: 380px;
+.img {
+    width: 214px;
     height: 214px;
     margin-top: 15px;
     background-position: center;
     background-size: cover;
-    border-radius: 2px;
-    cursor: pointer;
+    border-radius: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+    position: absolute;
 }
 
-@media(max-width:1280px){
-    .container{width: 100%;}
+.imageContainer:hover .img {
+    opacity: 0.3;
 }
 
-@media(max-width:768px){
-    #main{width: 95%;}
+@media(max-width:1280px) {
+    .container {
+        width: 100%;
+    }
+}
 
-    .img{width: 100%;}
+@media(max-width:768px) {
+    #main {
+        width: 95%;
+    }
 
-    #header{
+    .img {
+        width: 100%;
+    }
+
+    #header {
         margin: 10px 0;
         padding: 20px;
         gap: 10px;
         justify-content: center;
     }
 
-    #header h2{padding: 5px 0;}
+    #header h2 {
+        padding: 5px 0;
+    }
 }
 
-@media(max-width:480px){
-    #header h2{
+@media(max-width:480px) {
+    #header h2 {
         text-align: center;
         font-size: 1.5rem;
     }
 
-    #search_box{
+    #search_box {
         width: 80%;
         margin: auto;
     }
 
-    #search_box input{font-size: .7rem;}
+    #search_box input {
+        font-size: .7rem;
+    }
 }
+
 .centerText {
     text-align: center;
     color: bisque;
 }
 
 .title {
-    width: 380px;
+    width: 214px;
     position: absolute;
-    text-align: left;
-    padding-top: 10px;
+    text-align: center;
+    padding-top: 234px;
 }
 
 .location {
-    width: 380px;
+    width: 214px;
     position: absolute;
-    text-align: left;
-    padding-top: 35px;
+    text-align: right;
+    padding-top: 259px;
+    font-size: 12px;
 }
 
 .date {
-    width: 380px;
+    width: 214px;
     position: absolute;
     text-align: right;
-    padding-top: 10px;
+    padding-top: 279px;
+    font-size: 12px;
 }
 
 .price {
-    width: 380px;
+    width: 214px;
     position: absolute;
     text-align: right;
-    padding-top: 35px;
+    padding-top: 299px;
+    font-size: 12px;
+}
+
+.descriptionLocation {
+    width: 214px;
+    position: absolute;
+    text-align: left;
+    padding-top: 259px;
+    font-size: 12px;
+}
+
+.descriptionDate {
+    width: 214px;
+    position: absolute;
+    text-align: left;
+    padding-top: 279px;
+    font-size: 12px;
+}
+
+.descriptionPrice {
+    width: 214px;
+    position: absolute;
+    text-align: left;
+    padding-top: 299px;
+    font-size: 12px;
 }
 
 .imageContainer {
-    width: 380px;
-    height: 300px;
+    width: 214px;
+    height: 320px;
     background-position: center;
     background-size: cover;
-    cursor: pointer;
+    position: relative;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor:pointer;
+}
+
+.imageContainer:hover .button {
+    opacity: 1;
+}
+
+.popup{
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }

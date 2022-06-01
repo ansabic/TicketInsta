@@ -82,7 +82,7 @@ const data = [
     },
     {
         "id": 13612387,
-        "name": "Mu00e5neskin",
+        "name": "Måneskin",
         "picture": "https://api.deezer.com/artist/13612387/image",
         "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/09e22dad3e9e15a506c283cc200804fb/56x56-000000-80-0-0.jpg",
         "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/09e22dad3e9e15a506c283cc200804fb/250x250-000000-80-0-0.jpg",
@@ -193,7 +193,7 @@ const data = [
     },
     {
         "id": 573109,
-        "name": "u0110oru0111e Balau0161eviu0107",
+        "name": "Đorđe Balašević",
         "picture": "https://api.deezer.com/artist/573109/image",
         "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/10d06655e7fdd6964629078bc200df85/56x56-000000-80-0-0.jpg",
         "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/10d06655e7fdd6964629078bc200df85/250x250-000000-80-0-0.jpg",

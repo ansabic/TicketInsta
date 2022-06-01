@@ -50,8 +50,14 @@ function createImageByDataElement(i) {
 
     let image = document.createElement("div");
     image.className = "img";
+    //image.style.backgroundSize = "fill";
     image.style.display = "block";
     image.style.backgroundImage = "url(" + data[i].picture_medium + ")";
+
+    let button = document.createElement("div");
+    button.className = "button";
+    button.textContent = "KUPI";
+    button.id = "button"+i.toString();
 
     let nameText = document.createElement("div");
     nameText.className = "title";
@@ -70,11 +76,32 @@ function createImageByDataElement(i) {
     price.className = "price";
     price.textContent = Math.floor(350 * Math.random() + 250).toString() + " KN";
 
+    let dateDesc = document.createElement("div");
+    dateDesc.className = "descriptionDate";
+    dateDesc.textContent = "Lokacija:";
+    
+    let locationDesc = document.createElement("div");
+    locationDesc.className = "descriptionLocation";
+    locationDesc.textContent = "Datum:";
+    
+    let priceDesc = document.createElement("div");
+    priceDesc.className = "descriptionPrice";
+    priceDesc.textContent = "Cijena:";
+
     imageContainer.appendChild(image);
+    imageContainer.appendChild(button);
     imageContainer.appendChild(nameText);
     imageContainer.appendChild(locationName);
     imageContainer.appendChild(date);
     imageContainer.appendChild(price);
+    imageContainer.appendChild(locationDesc);
+    imageContainer.appendChild(dateDesc);
+    imageContainer.appendChild(priceDesc);
+
+    button.addEventListener("click",(event) => {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById(event.currentTarget.id).style.display = "none";
+    });
 
     return imageContainer;
 }
