@@ -115,10 +115,57 @@ function createEmptyElement() {
     document.querySelector("#centerText").appendChild(message);
 }
 
+function addListeners() {
+    document.getElementById("cancelButton").addEventListener("click", () => {
+        document.getElementById("grid").style.opacity = "1";
+        document.getElementById("popup").classList.remove("show");
+        emptyFields();
+    });
+    document.getElementById("acceptButton").addEventListener("click", () => {
+        confirmation();
+    });
+}
+
+function showSuccess() {
+    document.getElementById("popup").classList.remove("show");
+    document.getElementById("successPopup").classList.add("show");
+    setTimeout(() => {
+        document.getElementById("grid").style.opacity = "1";
+        document.getElementById("successPopup").classList.remove("show");
+    }, 2500);
+}
+
+function showError() {
+    document.getElementById("popupError").classList.add("show");
+}
+
+function confirmation() {
+    let nameValid = document.getElementById("name").value.length !== 0;
+    let surnameValid = document.getElementById("surname").value.length !== 0;
+    let emailValid = (document.getElementById("email").value.length !== 0) && (document.getElementById("email").value.includes("@"));
+    let cardNumberValid = document.getElementById("cardNumber").value.toString().length === 16;
+
+    if (nameValid && surnameValid && emailValid && cardNumberValid) {
+        showSuccess();
+        emptyFields();
+    } else {
+        showError();
+    }
+}
+
+function emptyFields() {
+    document.getElementById("name").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("cardNumber").value = "";
+    document.getElementById("popupError").classList.remove("show");
+}
+
 function getImagesFromJSFile() {
     for (let i = 0; i < data.length; i++) {
         let image = createImageByDataElement(i);
         document.querySelector("#grid").appendChild(image);
     }
     createEmptyElement();
+    addListeners();
 }

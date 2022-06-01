@@ -396,7 +396,7 @@ const data = [
     },
     {
         "id": 321940,
-        "name": "Petar Grau0161o",
+        "name": "Petar Grašo",
         "picture": "https://api.deezer.com/artist/321940/image",
         "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/2b0408001681f594be1d78ef91716550/56x56-000000-80-0-0.jpg",
         "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/2b0408001681f594be1d78ef91716550/250x250-000000-80-0-0.jpg",

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -191,6 +198,8 @@ input:focus {
     padding-left: 5px;
     width: 400px;
     height: 30px;
+
+
 }
 
 .descriptionDate {
@@ -261,15 +270,31 @@ input:focus {
     font-size: 40px;
     top: 50%;
     left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
     width: 1000px;
     height: 450px;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
 
+.popup.buttons {
+    flex-direction: row;
+}
+
 
 .popup.show {
     pointer-events: auto;
+    opacity: 1;
+}
+
+.popupError {
+    font-size: 10px;
+    color: red;
+    opacity: 0;
+}
+
+.popupError.show {
     opacity: 1;
 }
 
@@ -305,4 +330,33 @@ input:focus {
     margin: 4px 2px;
     top: 50%;
     left: 50%;
+}
+
+.successPopup {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: #090f13;
+    padding: 25px;
+    border-radius: 15px;
+    transition: .5s ease;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 450px;
+    height: 210px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.successPopup.show {
+    opacity: 1;
 }
