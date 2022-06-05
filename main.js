@@ -79,11 +79,11 @@ function createImageByDataElement(i) {
 
     let dateDesc = document.createElement("div");
     dateDesc.className = "descriptionDate";
-    dateDesc.textContent = "Lokacija:";
+    dateDesc.textContent = "Datum:";
 
     let locationDesc = document.createElement("div");
     locationDesc.className = "descriptionLocation";
-    locationDesc.textContent = "Datum:";
+    locationDesc.textContent = "Lokacija:";
 
     let priceDesc = document.createElement("div");
     priceDesc.className = "descriptionPrice";

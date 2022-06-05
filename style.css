@@ -14,7 +14,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 body {
     font-family: 'Comfortaa', cursive;
-    background-color: black;
+    background-color: #090f13;
     color: white;
     overflow-x: hidden;
 }
@@ -25,7 +25,19 @@ body {
 }
 
 header {
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid #4CAF50;
+}
+
+footer {
+    border-top: 5px solid #4CAF50;
+    text-align: right;
+    font-size: small;
+}
+
+.footer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #header {
@@ -35,7 +47,6 @@ header {
     flex-wrap: wrap;
     min-height: 70px;
     padding: 0 20px;
-
 }
 
 #header h2 {
@@ -64,12 +75,12 @@ header {
 }
 
 input:focus {
-    box-shadow: 0 0 5px orange;
-    border: 1px solid orange;
+    box-shadow: 0 0 5px #4CAF50;
+    border: 1px solid #4CAF50;
 }
 
 #search_box i:hover {
-    color: orange;
+    color: #4CAF50;
 }
 
 #grid {
@@ -90,7 +101,7 @@ input:focus {
     height: 214px;
     margin-top: 15px;
     background-position: center;
-+ border-radius: 5 px;
+    border-radius: 5px;
     background-size: contain;
     background-repeat: no-repeat;
     transition: .5s ease;
@@ -137,8 +148,6 @@ input:focus {
     #column {
         display: none;
     }
-
-
 }
 
 @media (max-width: 480px) {
@@ -180,6 +189,7 @@ input:focus {
 .centerText {
     text-align: center;
     color: bisque;
+    margin-bottom: 40px;
 }
 
 .title {
@@ -384,7 +394,7 @@ input:focus {
 }
 
 .acceptButton {
-    background-color: green;
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -426,10 +436,7 @@ input:focus {
     opacity: 1;
 }
 
-.group {
-
-}
-
-.result {
-
+.icon{
+    background-color: #4CAF50;
+    color
 }
